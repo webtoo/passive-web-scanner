@@ -120,33 +120,57 @@ After the scan completes, an HTML report will be generated in the same directory
 The report includes:
 
 Scan Information: Target, domain, scan date, pages scanned.
+
 Table of Contents: Quick navigation to different sections.
+
 SSL/TLS Information: Details about the SSL certificate (if HTTPS is used).
+
 Technologies Detected: List of identified web technologies.
+
 Security Analysis:
+
 An overall risk assessment with a risk level and score.
+
 Component-specific scores for various security aspects.
+
 Detailed OWASP Top 10 findings.
+
 Prioritized security recommendations.
+
 Analysis of HTTP Security Headers.
+
 Pages Information: A table summarizing each scanned page's URL, status code, title, and counts of forms/links.
+
 Forms Analysis: Details about forms found on the site.
+
 HTTP Headers: Raw HTTP response headers from the initial request.
+
 Robots.txt Content: The content of the robots.txt file (if found).
 
 👻 Stealth Features Explained
 This scanner is designed with several features to minimize its footprint and avoid easy detection:
 
 Randomized User-Agents: Each request uses a randomly chosen User-Agent string from a pool of common web browsers, making it harder to fingerprint the scanner by a consistent client signature.
+
 Variable Delays: Instead of fixed intervals, requests are sent with random delays within a specified range. This unpredictable timing makes the activity look more natural and less like an automated script.
+
 Dynamic Referer: When navigating from one page to another, the Referer HTTP header is correctly set to the previously visited page, mimicking a user clicking links.
+
 Header Order Randomization: The order of non-essential HTTP headers is shuffled for each request, adding another layer of variability to the request fingerprint.
-Persistent Connections (Connection: keep-alive): Requests are configured to prefer keeping the TCP connection alive, a standard practice for web browsers, which can reduce the number of new connection handshakes and make the traffic appear more typical.
+
+Persistent Connections (Connection: keep-alive): Requests are configured to prefer keeping the TCP connection alive, a standard practice for web browsers, which can reduce the number of new connection handshakes and make 
+the traffic appear more typical.
+
 robots.txt Compliance: The scanner checks and respects robots.txt rules, avoiding disallowed paths. This is a crucial ethical and practical measure for good web citizenship and avoiding blacklists.
+
 Smart Error Handling: It differentiates between temporary server issues (which it retries) and explicit blocking (like 401/403 errors), stopping further attempts on blocked resources to prevent escalating detection.
 
 ⚠️ Limitations
 Passive Only: This is a passive scanner. It doesn't perform active vulnerability testing (e.g., SQL injection, XSS attacks), nor does it interact with forms or execute JavaScript.
+
 No Proxy Rotation: The script doesn't include built-in proxy rotation or VPN integration. For advanced stealth against IP-based blocking, consider using the script behind a proxy chain or a VPN.
+
 Limited Deep Scanning: The max_pages limit is intended to keep the scan passive and quick. For comprehensive site mapping or exhaustive link discovery, dedicated crawling tools are more suitable.
-No CAPTCHA/Bot Detection Bypass: The scanner doesn't attempt to solve CAPTCHAs or bypass advanced bot detection mechanisms. Encountering such defenses will likely result in the scanner being blocked from proceeding on that specific page or site.
+
+No CAPTCHA/Bot Detection Bypass: The scanner doesn't attempt to solve CAPTCHAs or bypass advanced bot detection mechanisms. Encountering such defenses will likely result in the scanner being blocked from proceeding on that 
+specific page or site.
