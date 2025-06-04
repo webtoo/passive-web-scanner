@@ -45,6 +45,7 @@ Bash
 git clone <repository_url>
 cd <repository_directory>
 Download the script directly (if it's a standalone file): Save the provided Python code as web_scanner.py (or any other .py filename).
+
 💡 Usage
 Run the script from your terminal. You must provide a target URL.
 
@@ -88,6 +89,7 @@ python web_scanner.py http://www.example.org -p 50 -d 5 15
 Bash
 
 python web_scanner.py openai.com
+
 📊 Output Report
 After the scan completes, an HTML report will be generated in the same directory where you run the script. The report is a single HTML file that you can open in any web browser.
 
@@ -107,6 +109,7 @@ Pages Information: A table summarizing each scanned page's URL, status code, tit
 Forms Analysis: Details about forms found on the site.
 HTTP Headers: Raw HTTP response headers from the initial request.
 Robots.txt Content: The content of the robots.txt file (if found).
+
 👻 Stealth Features Explained
 This scanner is designed with several features to minimize its footprint and avoid easy detection:
 
@@ -117,6 +120,7 @@ Header Order Randomization: The order of non-essential HTTP headers is shuffled 
 Persistent Connections (Connection: keep-alive): Requests are configured to prefer keeping the TCP connection alive, a standard practice for web browsers, which can reduce the number of new connection handshakes and make the traffic appear more typical.
 robots.txt Compliance: The scanner checks and respects robots.txt rules, avoiding disallowed paths. This is a crucial ethical and practical measure for good web citizenship and avoiding blacklists.
 Smart Error Handling: It differentiates between temporary server issues (which it retries) and explicit blocking (like 401/403 errors), stopping further attempts on blocked resources to prevent escalating detection.
+
 ⚠️ Limitations
 Passive Only: This is a passive scanner. It doesn't perform active vulnerability testing (e.g., SQL injection, XSS attacks), nor does it interact with forms or execute JavaScript.
 No Proxy Rotation: The script doesn't include built-in proxy rotation or VPN integration. For advanced stealth against IP-based blocking, consider using the script behind a proxy chain or a VPN.
