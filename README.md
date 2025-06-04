@@ -1,4 +1,5 @@
 Passive Web Scanner
+
 A Python-based passive web scanner designed for initial reconnaissance of web applications. It passively collects information about a target website's structure, technologies, security headers, forms, and more, generating a detailed HTML report. The scanner incorporates several stealth features to minimize detectability by the host.
 
 ✨ Features
