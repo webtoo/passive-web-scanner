@@ -37,6 +37,7 @@ You can install these libraries using pip:
 Bash
 
 pip install requests beautifulsoup4
+
 🚀 Installation
 Clone the repository (if this script is part of a larger project):
 Bash
