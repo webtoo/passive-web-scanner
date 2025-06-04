@@ -3,28 +3,51 @@ A Python-based passive web scanner designed for initial reconnaissance of web ap
 
 ✨ Features
 Passive Information Gathering: Collects data without sending malicious or intrusive requests.
+
 HTML Report Generation: Creates a self-contained, human-readable HTML report with a clear overview of findings.
+
 Security Analysis:
+
 Overall risk assessment with a percentage score and risk level (Critical, High, Medium, Low).
+
 Breakdown of component scores (OWASP, Security Headers, Cookies, Forms, SSL/TLS, Information Disclosure).
+
 OWASP Top 10 (2021) assessment with findings and risk levels per category.
+
 Detailed security header analysis.
+
 Cookie security analysis.
+
 Basic form security analysis.
+
 SSL/TLS certificate information and security assessment.
+
 Information disclosure checks.
+
 Prioritized security recommendations (Critical, High, Medium, Low).
+
 Technology Detection: Identifies common web technologies, CMS, frameworks, and server types.
+
 robots.txt & Sitemap Analysis: Fetches and parses robots.txt and extracts sitemap URLs.
+
 Link & Form Extraction: Discovers internal links and forms on scanned pages.
+
 Stealth Features:
+
 User-Agent Rotation: Randomly selects from a pool of common browser User-Agents.
+
 Randomized Request Delays: Introduces varying delays between requests to mimic human Browse.
+
 Referer Header Mimicry: Sets the Referer header to simulate legitimate navigation.
+
 Randomized Header Order: Shuffles the order of common HTTP headers.
+
 Connection: keep-alive: Uses persistent connections like real browsers.
+
 Respects robots.txt: Adheres to Disallow rules to avoid being flagged as a misbehaving bot.
+
 Intelligent Retry Logic: Retries transient server errors (e.g., 429, 5xx) with exponential backoff, but reports hard blocks (e.g., 401, 403) as errors immediately.
+
 📋 Prerequisites
 Before you can use this script, ensure you have:
 
@@ -73,12 +96,12 @@ Examples
 
 Bash
 
-python web_scanner.py https://www.google.com
+python web_scanner.py https://www.example.org
 2. Scan with a custom report filename:
 
 Bash
 
-python web_scanner.py https://www.github.com -o github_scan.html
+python web_scanner.py https://www.example.org -o github_scan.html
 3. Scan more pages with a longer delay:
 
 Bash
